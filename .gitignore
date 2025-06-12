@@ -1,0 +1,14 @@
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.log
+
+# Env & creds
+.env*
+!.env.example
+
+# OS / Editor
+.DS_Store
+.idea/
+.vscode/
