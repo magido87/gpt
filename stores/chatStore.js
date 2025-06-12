@@ -54,4 +54,4 @@ const useChatStore = create((set, get) => ({
   clear: () => set({ messages: [], totalTokens: 0, totalCost: 0 })
 }));
 
-export default useChatStore;
+export { useChatStore };

@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import useChatStore from '../stores/chatStore';
-import useSettingsStore from '../stores/settingsStore';
-import MessageItem from '../components/MessageItem';
+import Head from 'next/head';
 import ChatInput from '../components/ChatInput';
+import MessageItem from '../components/MessageItem';
+import { useChatStore } from '../stores/chatStore';
+import { useSettingsStore } from '../stores/settingsStore';
+import SettingsModal from '../components/SettingsModal';
 import ThemeSelector from '../components/ThemeSelector';
 
 export default function Home() {

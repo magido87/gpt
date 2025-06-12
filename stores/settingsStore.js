@@ -1,9 +1,8 @@
-
 import { create } from 'zustand';
 
 const persistedSettings = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('settings') || '{}') : {};
 
-export const useSettingsStore = create((set, get) => ({
+const useSettingsStore = create((set, get) => ({
   apiKey: persistedSettings.apiKey || '',
   model: persistedSettings.model || 'gpt-4o',
   temperature: persistedSettings.temperature ?? 0.7,
@@ -18,3 +17,5 @@ export const useSettingsStore = create((set, get) => ({
     set({ [key]: value });
   }
 }));
+
+export { useSettingsStore };
