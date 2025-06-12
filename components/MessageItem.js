@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import rehypeSanitize from 'rehype-sanitize';
 import remarkGfm from 'remark-gfm';
@@ -26,5 +27,15 @@ function MessageItem({ msg }) {
     </div>
   );
 }
+
+MessageItem.propTypes = {
+  msg: PropTypes.shape({
+    role: PropTypes.oneOf(['user', 'assistant']).isRequired,
+    content: PropTypes.string.isRequired,
+    promptTokens: PropTypes.number,
+    completionTokens: PropTypes.number,
+    cost: PropTypes.number
+  }).isRequired
+};
 
 export default React.memo(MessageItem);

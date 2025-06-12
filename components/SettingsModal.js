@@ -1,5 +1,6 @@
 import { useSettingsStore } from '../stores/settingsStore';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export default function SettingsModal({ open, onClose }) {
   const setSetting = useSettingsStore((s) => s.setSetting);
@@ -31,7 +32,7 @@ export default function SettingsModal({ open, onClose }) {
             />
           </div>
         ))}
-                <div className="mb-4">
+        <div className="mb-4">
           <label className="label">
             <span className="label-text">OpenAI API Key</span>
           </label>
@@ -43,7 +44,7 @@ export default function SettingsModal({ open, onClose }) {
             placeholder="sk-..."
           />
         </div>
-<div className="mb-4">
+        <div className="mb-4">
           <label className="label">
             <span className="label-text">max_tokens</span>
             <span className="badge badge-outline">{settings.max_tokens}</span>
@@ -62,3 +63,8 @@ export default function SettingsModal({ open, onClose }) {
     </div>
   );
 }
+
+SettingsModal.propTypes = {
+  open: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired
+};
